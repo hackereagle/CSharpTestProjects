@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="JCSEM.ImgProcToolsGui.Views.wpfDisplayImgElm"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:JCSEM.ImgProcToolsGui.Views"
+             mc:Ignorable="d" Background="#FF28968C" Height="434.548" Width="411.111">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="25"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Grid.Column="0" Grid.RowSpan="1">
+            <WindowsFormsHost Name="pctbxContainer"/>
+        </Border>
+        <Border Grid.Row="1" Grid.Column="0" Grid.RowSpan="1" Background="#FFFDFDFD">
+            <TextBlock x:Name="tbMouseStatue" Text="(x, y) = (0, 0) || Gray = "/>
+        </Border>
+
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,70 @@
+﻿<Window x:Class="TestColorPicker.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TestColorPicker"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="422.971" Width="773.154" Loaded="Window_Loaded_1">
+    <Window.Resources>
+        <local:ViewModel x:Key="ViewModel"/>
+    </Window.Resources>
+    <Grid DataContext="{Binding Source={StaticResource ViewModel}}">
+        <!-- < Definitions > -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <!-- <Panel> -->
+        <Border  Grid.Row="0" Grid.Column="0" Grid.RowSpan="1" Grid.ColumnSpan="1">
+            <TextBlock Text="Using ListBox" />
+        </Border>
+        <Border Grid.Row="1" Grid.Column="0" Grid.RowSpan="1" Grid.ColumnSpan="1">
+            <ListBox HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,0,0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" x:Name="colorList" SelectionChanged="colorList_SelectionChanged">
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel IsItemsHost="True" Orientation="Horizontal"/>
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Rectangle Fill="{Binding Name}" Width="20" Height="20" Stroke="#FF211E1E" OpacityMask="Black" StrokeThickness="1" />
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Border>
+        <Border Grid.Row="2" Grid.Column="0" Grid.RowSpan="1" Grid.ColumnSpan="1">
+            <Rectangle x:Name="rtlfill" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="60" Margin="10,50,0,0" Stroke="Black" VerticalAlignment="Top" Width="60" RenderTransformOrigin="0.533,0.6"/>
+        </Border>
+        <!--<DatePicker HorizontalAlignment="Left" Margin="509,226,-278.6,0" VerticalAlignment="Top" Width="100"/>-->
+
+        <!--============ Test Combox =====================-->
+        <Border  Grid.Row="0" Grid.Column="1" Grid.RowSpan="1" Grid.ColumnSpan="1">
+            <TextBlock Text="Using CombBox" />
+        </Border>
+        <Border  Grid.Row="1" Grid.Column="1" Grid.RowSpan="1" Grid.ColumnSpan="1" Background="LightSkyBlue">
+            <!--<ComboBox x:Name="comboColors" Margin="104,77,143.2,85.2" SelectionChanged="comboColors_SelectionChanged" />-->
+            <ComboBox x:Name="comboColors" Margin="104,77,143.2,85.2" ItemsSource="{Binding Path=Items}" SelectedItem="{Binding Path=SItems}">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Rectangle x:Name="rtlfill" Fill="{Binding Path=Color}"  Width="20" Height="20" Stroke="#FF211E1E" OpacityMask="Black" StrokeThickness="1" />
+                            <TextBlock Text=" "/>
+                            <TextBlock Text="{Binding Path=ColorName}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+        </Border>
+        <Border Grid.Row="2" Grid.Column="1" Grid.RowSpan="1" Grid.ColumnSpan="1">
+            <!--<Rectangle x:Name="rtlfill2" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="60" Margin="10,50,0,0" Stroke="Black" VerticalAlignment="Top" Width="60" RenderTransformOrigin="0.533,0.6"/>-->
+            <Rectangle x:Name="rtlfill2" Fill="{Binding Color, Mode=TwoWay}" HorizontalAlignment="Left" Height="60" Margin="10,50,0,0" Stroke="Black" VerticalAlignment="Top" Width="60" RenderTransformOrigin="0.533,0.6"/>
+        </Border>
+    </Grid>
+</Window>

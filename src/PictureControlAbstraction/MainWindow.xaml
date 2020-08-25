@@ -1,0 +1,35 @@
+﻿<Window x:Class="PictureControlAbstraction.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PictureControlAbstraction"
+        xmlns:img_gui="clr-namespace:JCSEM.ImgProcToolsGui.Views"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="497">
+    <Window.Resources>
+        <local:ViewModel x:Key="ViewModel"/>
+    </Window.Resources>
+    <Grid DataContext="{Binding Source={StaticResource ViewModel}}">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Row="0" Grid.Column="0" Grid.RowSpan="1" Grid.ColumnSpan="4" Background="Gray" Margin="0,0,0.4,0.4">
+            <img_gui:wpfDisplayImgElm x:Name="DisplayElem" DispImg="{Binding DispImgVM, Mode=TwoWay}" Height="Auto" Width="Auto"/>
+        </Border>
+
+        <Border  Grid.Row="1" Grid.Column="0" Grid.RowSpan="1" Grid.ColumnSpan="1">
+            <Button x:Name="button" Content="Load Image" Command="{Binding OpenBtnClick}" HorizontalAlignment="Left" Height="30" Margin="21,10,0,0" VerticalAlignment="Top" Width="91"/>
+        </Border>
+
+        <CheckBox x:Name="checkLine" Content="Draw Line" Grid.Column="1" HorizontalAlignment="Left" Height="30" Margin="9.6,4.8,0,0" Grid.Row="1" VerticalAlignment="Top" Width="103" Click="checkLine_Click"/>
+    </Grid>
+</Window>

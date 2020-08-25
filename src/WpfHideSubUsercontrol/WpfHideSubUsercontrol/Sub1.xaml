@@ -1,0 +1,13 @@
+﻿<UserControl x:Class="WpfHideSubUsercontrol.Sub1"
+             x:ClassModifier="internal"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfHideSubUsercontrol"
+             mc:Ignorable="d" Height="118.022" Width="132.528">
+    <Grid Background="#FF030000">
+        <Label x:Name="label" Content="Sub Usercontrol 1" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top" Background="#FFF9F1F1"/>
+
+    </Grid>
+</UserControl>

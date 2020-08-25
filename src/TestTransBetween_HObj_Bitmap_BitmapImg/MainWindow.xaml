@@ -1,0 +1,55 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TestTransBetween_HObj_Bitmap_BitmapImg"
+        xmlns:HalconDotNet="clr-namespace:HalconDotNet;assembly=halcondotnet" x:Class="TestTransBetween_HObj_Bitmap_BitmapImg.MainWindow"
+        mc:Ignorable="d"
+        Title="Test Transformation Between HObject, Bitmap and BitmapImage" Height="404.754" Width="930.634">
+    <Grid>
+        <!-- Definitions -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <!-- Panel ─ label -->
+        <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="1">
+            <Label x:Name="lblPcturebox" Content="PictureBox:" FontFamily="Times New Roman" FontWeight="Bold"></Label>
+        </Border>
+
+        <Border Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="1">
+            <Label x:Name="lblWpfImage" Content="WPF Image:" FontFamily="Times New Roman" FontWeight="Bold"></Label>
+        </Border>
+
+        <Border Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="1">
+            <Label x:Name="lblHWindow" Content="Halcon HWindow:" FontFamily="Times New Roman" FontWeight="Bold"></Label>
+        </Border>
+
+        <!-- Panel ─ Elements -->
+        <Border Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="1">
+            <WindowsFormsHost x:Name="pctbxContainer"></WindowsFormsHost>
+        </Border>
+        
+        <Border Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1">
+            <Image x:Name="wpfImage"></Image>
+        </Border>
+        
+        <Border Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="1">
+            <HalconDotNet:HWindowControlWPF x:Name="hWin"/>
+        </Border>
+
+        <!-- Panel ─ Button -->
+        <Border Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3">
+            <Button x:Name="btnLoadImg" Content="Load Image" HorizontalAlignment="Left" Height="20" Margin="416,10,0,0" VerticalAlignment="Top" Width="90" Click="btnLoadImg_Click"/>
+        </Border>
+    </Grid>
+</Window>

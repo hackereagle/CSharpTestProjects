@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="TestWinformMixWpf.WpfUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TestWinformMixWpf"
+             mc:Ignorable="d" 
+             d:DesignHeight="280" d:DesignWidth="210">
+    <Grid Background="#FF1C2186">
+        <Viewbox Stretch="Fill">
+            <Canvas Height="280" Width="210" Name="aaa">
+                <Label x:Name="label" Content="I am WPF" HorizontalAlignment="Left" Margin="68,10,0,0" VerticalAlignment="Top"/>
+                <Button x:Name="button" Content="Add Usr Ctrl" HorizontalAlignment="Left" Margin="54,242,0,0" VerticalAlignment="Top" Width="89" Height="25" Click="button_Click"/>
+                <local:wpfUsr2 x:Name="firstWpfUsr" Canvas.Left="27" Canvas.Top="36" Width="156"/>
+
+            </Canvas>
+        </Viewbox>
+    </Grid>
+</UserControl>
