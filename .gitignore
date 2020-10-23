@@ -351,3 +351,6 @@ MigrationBackup/
 
 # User Define
 .Bin/
+
+#BeatPulse healthcheck temp database
+/CSharpTestProjects.sln
