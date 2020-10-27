@@ -62,7 +62,11 @@ namespace TestCsManipulateIni
         public int GetAmountOfKeyInSection(string section)
         {
             string[] keysInSection = GetSection(section, mIniPath);
-            return keysInSection.Length;
+            // if no section, GetSection would return null
+            if (keysInSection == null)
+                return 0;
+            else
+                return keysInSection.Length;
         }
     }
 
