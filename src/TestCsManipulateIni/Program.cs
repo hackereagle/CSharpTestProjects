@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -20,9 +21,9 @@ namespace TestCsManipulateIni
             }
         }
 
-        [System.Runtime.InteropServices.DllImport("kernel32")]
+        [System.Runtime.InteropServices.DllImport("kernel32", EntryPoint = "WritePrivateProfileString", SetLastError = true)]
         private static extern long WritePrivateProfileString(string section, string key, string val, string filePath);
-        [System.Runtime.InteropServices.DllImport("kernel32")]
+        [System.Runtime.InteropServices.DllImport("kernel32", EntryPoint = "GetPrivateProfileString", SetLastError = true)]
         private static extern int GetPrivateProfileString(string section, string key, string def, StringBuilder retVal, int size, string filePath);
 
         public void WriteValue(string section, string key, string val)
@@ -36,12 +37,40 @@ namespace TestCsManipulateIni
             GetPrivateProfileString(section, key, "", result, 255, mIniPath);
             return result.ToString();
         }
+
+        [System.Runtime.InteropServices.DllImport("kernel32", EntryPoint = "GetPrivateProfileSection", SetLastError = true)]
+        private static extern long GetPrivateProfileSection(string section, IntPtr retVal, uint size, string filePath);
+        private string[] GetSection(string section, string path)
+        {
+            uint MAX_BUFFER = 32767;
+            System.IntPtr pReturnedString = System.Runtime.InteropServices.Marshal.AllocCoTaskMem((int)MAX_BUFFER);
+            long bytesReturned = GetPrivateProfileSection(section, pReturnedString, MAX_BUFFER, mIniPath);
+            return IntPtrToStringArray(pReturnedString, bytesReturned);
+        }
+        private string[] IntPtrToStringArray(IntPtr pReturnedString, long bytesReturned)
+        {
+            if (bytesReturned == 0)
+            {
+                Marshal.FreeCoTaskMem(pReturnedString);
+                return null;
+            }
+
+            string local = Marshal.PtrToStringAnsi(pReturnedString, (int)bytesReturned).ToString();
+            Marshal.FreeCoTaskMem(pReturnedString);
+            return local.Substring(0, local.Length - 1).Split('\0');
+        }
+        public int GetAmountOfKeyInSection(string section)
+        {
+            string[] keysInSection = GetSection(section, mIniPath);
+            return keysInSection.Length;
+        }
     }
 
     class Program
     {
         static void Main(string[] args)
         {
+            // test basic ini manipulating.
             ManipulateIni test = new ManipulateIni(AppDomain.CurrentDomain.BaseDirectory + "test.ini");
             test.WriteValue("sss", "aaa", "1");
 
@@ -55,6 +84,10 @@ namespace TestCsManipulateIni
             {
                 Console.WriteLine("result is null");
             }
+
+            // test how to count amount of key in specific section.
+            int num = test.GetAmountOfKeyInSection("sss");
+            Console.WriteLine("amount of section sss = {0}", num);
 
             Console.WriteLine("\nFinish testing");
             Console.ReadLine();
