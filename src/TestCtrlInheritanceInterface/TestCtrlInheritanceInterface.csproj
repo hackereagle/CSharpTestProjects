@@ -53,10 +53,29 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="InheritanceInterface.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InheritanceInterface.Designer.cs">
+      <DependentUpon>InheritanceInterface.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ITestInterfaceForCtrl.cs" />
+    <Compile Include="NoInheritanceInterface.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NoInheritanceInterface.Designer.cs">
+      <DependentUpon>NoInheritanceInterface.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InheritanceInterface.resx">
+      <DependentUpon>InheritanceInterface.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NoInheritanceInterface.resx">
+      <DependentUpon>NoInheritanceInterface.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
