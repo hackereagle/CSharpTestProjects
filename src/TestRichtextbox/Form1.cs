@@ -15,6 +15,9 @@ namespace TestRichtextbox
         public Form1()
         {
             InitializeComponent();
+
+            // test richtextbox properties
+            rtxtTest.SelectedText = string.Empty;
         }
 
         private void btnAddOneLine_Click(object sender, EventArgs e)
