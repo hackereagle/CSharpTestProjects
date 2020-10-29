@@ -16,5 +16,10 @@ namespace TestRichtextbox
         {
             InitializeComponent();
         }
+
+        private void btnAddOneLine_Click(object sender, EventArgs e)
+        {
+            this.rtxtTest.AppendText("One Line\n");
+        }
     }
 }

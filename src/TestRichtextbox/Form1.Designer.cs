@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.rtxtTest = new System.Windows.Forms.RichTextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAddOneLine = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // rtxtTest
@@ -40,21 +40,22 @@
             this.rtxtTest.TabIndex = 0;
             this.rtxtTest.Text = "";
             // 
-            // button1
+            // btnAddOneLine
             // 
-            this.button1.Location = new System.Drawing.Point(42, 334);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(122, 39);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAddOneLine.Location = new System.Drawing.Point(42, 334);
+            this.btnAddOneLine.Name = "btnAddOneLine";
+            this.btnAddOneLine.Size = new System.Drawing.Size(122, 39);
+            this.btnAddOneLine.TabIndex = 1;
+            this.btnAddOneLine.Text = "Add One Line";
+            this.btnAddOneLine.UseVisualStyleBackColor = true;
+            this.btnAddOneLine.Click += new System.EventHandler(this.btnAddOneLine_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(398, 452);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnAddOneLine);
             this.Controls.Add(this.rtxtTest);
             this.Name = "Form1";
             this.Text = "Test Richtextbox Form";
@@ -65,7 +66,7 @@
         #endregion
 
         private System.Windows.Forms.RichTextBox rtxtTest;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAddOneLine;
     }
 }
 
