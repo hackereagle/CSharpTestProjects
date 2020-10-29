@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,18 +10,16 @@ using System.Windows.Forms;
 
 namespace TestCtrlInheritanceInterface
 {
-    public partial class Form1 : Form
+    public partial class NoInheritanceInterface : UserControl
     {
-        public Form1()
+        public NoInheritanceInterface()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        public System.Windows.Forms.Label ShowText
         {
-            noInheritanceInterface1.ShowText.Text = "1";
-            ITestInterfaceForCtrl test = inheritanceInterface1;
-            test.ShowText.Text = "2";
+            get { return this.lblShow; }
         }
     }
 }
