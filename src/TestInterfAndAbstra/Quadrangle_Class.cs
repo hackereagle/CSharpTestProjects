@@ -35,4 +35,5 @@ namespace TestInterfAndAbstra
             System.Console.WriteLine("I am rectangle~~~! My width = {0}, height = {1}, Area = {2}", width, height, Area);
         }
     }
+
 }
