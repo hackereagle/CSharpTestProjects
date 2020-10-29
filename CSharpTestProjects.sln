@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30611.23
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestMultArrayOperate", "src\TestMultArrayOperate\TestMultArrayOperate.csproj", "{76B42CEE-E1F8-4F93-B5BD-2A3843C9691B}"
 EndProject
@@ -80,6 +80,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApplication1", "src\WpfHideSubUsercontrol\WpfApplication1\WpfApplication1.csproj", "{08E91B44-FC7F-4B21-8ACE-C64AE40A3728}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestCsManipulateIni", "src\TestCsManipulateIni\TestCsManipulateIni.csproj", "{CE2312DA-CC4F-4B95-9450-1C5DE956D844}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestRichtextbox", "src\TestRichtextbox\TestRichtextbox.csproj", "{DF708038-6E17-45B1-82E6-FA397093B828}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -509,6 +511,18 @@ Global
 		{CE2312DA-CC4F-4B95-9450-1C5DE956D844}.Release|x64.Build.0 = Release|Any CPU
 		{CE2312DA-CC4F-4B95-9450-1C5DE956D844}.Release|x86.ActiveCfg = Release|Any CPU
 		{CE2312DA-CC4F-4B95-9450-1C5DE956D844}.Release|x86.Build.0 = Release|Any CPU
+		{DF708038-6E17-45B1-82E6-FA397093B828}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF708038-6E17-45B1-82E6-FA397093B828}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF708038-6E17-45B1-82E6-FA397093B828}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{DF708038-6E17-45B1-82E6-FA397093B828}.Debug|x64.Build.0 = Debug|Any CPU
+		{DF708038-6E17-45B1-82E6-FA397093B828}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DF708038-6E17-45B1-82E6-FA397093B828}.Debug|x86.Build.0 = Debug|Any CPU
+		{DF708038-6E17-45B1-82E6-FA397093B828}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF708038-6E17-45B1-82E6-FA397093B828}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF708038-6E17-45B1-82E6-FA397093B828}.Release|x64.ActiveCfg = Release|Any CPU
+		{DF708038-6E17-45B1-82E6-FA397093B828}.Release|x64.Build.0 = Release|Any CPU
+		{DF708038-6E17-45B1-82E6-FA397093B828}.Release|x86.ActiveCfg = Release|Any CPU
+		{DF708038-6E17-45B1-82E6-FA397093B828}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -536,6 +550,7 @@ Global
 		{F98A5946-D2F6-4F6C-AA24-E8CD6DC01E62} = {98FCD5FA-E98C-48F3-B53A-DF35017FD9F8}
 		{F1C4B4F9-A769-4439-8939-200EF51B9D4D} = {F98A5946-D2F6-4F6C-AA24-E8CD6DC01E62}
 		{08E91B44-FC7F-4B21-8ACE-C64AE40A3728} = {F98A5946-D2F6-4F6C-AA24-E8CD6DC01E62}
+		{DF708038-6E17-45B1-82E6-FA397093B828} = {2852990D-EA7B-4C60-91C9-A18086778975}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C7E6A0CC-E197-4DF5-BD06-080DFD82DB81}
