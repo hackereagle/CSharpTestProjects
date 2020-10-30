@@ -63,7 +63,7 @@ namespace TestHalconOp_ReduceDomain
         {
             HalconDotNet.HOperatorSet.SetSystem("clip_region", "false");
 
-            System.Drawing.Bitmap srcImg = new System.Drawing.Bitmap("D:/Document/project/lena.bmp");
+            System.Drawing.Bitmap srcImg = new System.Drawing.Bitmap("D:/Rorze_Data/Projects/lena.bmp");
             ImageVisualizer.ImageVisualizer.TestShowVisualizer(srcImg);
 
             // test 1: use ReduceDomain and show processed image with Bitmap.
