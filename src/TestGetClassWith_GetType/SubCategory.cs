@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Algorithm.Category1.SubCategory
+namespace RORZE.Algorithm.Category1.SubCategory
 {
     class AlgoClass3
     {
