@@ -13,11 +13,22 @@ namespace TestGetClassWith_GetType
     /// </summary>
     class Program
     {
-        private static bool IsSecondLevel(string category)
+        private static bool IsSecondLevel(string category, out string ParentCategory, out string name)
         {
             bool isSecondLevel = false;
-            if (category.IndexOf('.') != -1)
+            int index = category.IndexOf('.');
+            if (index != -1)
+            {
                 isSecondLevel = true;
+                ParentCategory = category.Substring(0, index);
+                name = category.Substring(index + 1, category.Length - index - 1);
+            }
+            else
+            {
+                isSecondLevel = false;
+                ParentCategory = null;
+                name = category;
+            }
 
             return isSecondLevel;
         }
@@ -34,15 +45,19 @@ namespace TestGetClassWith_GetType
             foreach (IGrouping<string, Type> type in group)
             {
                 int strAlgorithmLocation = type.Key.IndexOf(judgeTarget);
-                if (strAlgorithmLocation != -1)
+                bool isInAlgorithmNamespace = strAlgorithmLocation != -1;
+                if (isInAlgorithmNamespace)
                 {
                     string key = type.Key.Substring(strAlgorithmLocation + judgeTarget.Length + 1);
-                    if (IsSecondLevel(key))
+                    string parentCategory, categoryName;
+                    if (IsSecondLevel(key, out parentCategory, out categoryName))
                     {
-                        //Dictionary<string, string> node = new Dictionary<string, string>();
-                        //foreach (Type element in type)
-                        //    node.Add(key, element.Name);
-                        //result.Add(key.Substring(0, key.IndexOf(".")), node);
+                        System.Windows.Forms.TreeNode temp = new System.Windows.Forms.TreeNode();
+                        temp.Nodes.Add(categoryName);
+                        foreach (Type element in type)
+                            temp.Nodes[0].Nodes.Add(element.Name);
+
+                        result.Nodes[0].Nodes[FirstNodeIndex[parentCategory]].Nodes.Add(temp);
                     }
                     else
                     {
@@ -50,12 +65,42 @@ namespace TestGetClassWith_GetType
                         FirstNodeIndex.Add(key, index);
                         foreach (Type element in type)
                             result.Nodes[0].Nodes[FirstNodeIndex[key]].Nodes.Add(element.Name);
+
+                        index++;
                     }
                 }
             }
 
             return result;
         }
+        //private static System.Collections.ArrayList GetAlgorithm(IEnumerable<IGrouping<string, Type>> group)
+        //{
+        //    System.Collections.ArrayList result = new System.Collections.ArrayList();
+
+
+        //    const string judgeTarget = "Algorithm";
+        //    foreach (IGrouping<string, Type> type in group)
+        //    {
+        //        int strAlgorithmLocation = type.Key.IndexOf(judgeTarget);
+        //        bool isInAlgorithmNamespace = strAlgorithmLocation != -1;
+        //        if (isInAlgorithmNamespace)
+        //        {
+        //            string key = type.Key.Substring(strAlgorithmLocation + judgeTarget.Length + 1);
+        //            string parentCategory;
+        //            if (IsSecondLevel(key, out parentCategory))
+        //            {
+        //                //foreach (Type element in type)
+        //            }
+        //            else
+        //            {
+        //                foreach (Type element in type)
+
+        //            }
+        //        }
+        //    }
+
+        //    return result;
+        //}
 
         static void Main(string[] args)
         {
@@ -85,8 +130,13 @@ namespace TestGetClassWith_GetType
 
             // Test saving to tree view
             Console.WriteLine("\n");
-            var arrangeResults = GetAlgorithm(group);
-            //System.Windows.Forms.TreeView
+            System.Windows.Forms.TreeView arrangeResults = GetAlgorithm(group);
+            arrangeResults.Dock = System.Windows.Forms.DockStyle.Fill;
+            System.Windows.Forms.Form form = new System.Windows.Forms.Form();
+            form.Controls.Add(arrangeResults);
+
+            System.Windows.Forms.Application.EnableVisualStyles();
+            System.Windows.Forms.Application.Run(form);
 
             Console.ReadLine();
         }
