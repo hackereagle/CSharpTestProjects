@@ -16,8 +16,8 @@ namespace TestGetClassWith_GetType
         // Using AfterSelected event is frendly for getting node name.
         private static void TreeViewAfterSelected(object sender, EventArgs e)
         {
-            //System.Windows.Forms.MessageBox.Show(((System.Windows.Forms.TreeView)sender).SelectedNode.Text);
-            System.Windows.Forms.MessageBox.Show(((System.Windows.Forms.TreeView)sender).SelectedNode.FullPath);
+            string originStr = ((System.Windows.Forms.TreeView)sender).SelectedNode.FullPath;
+            System.Windows.Forms.MessageBox.Show(originStr.Replace("\\", "."));
         }
         
         // if would like to implement getting node as TreeView clicked. Using Click event is not frendly and 
@@ -123,6 +123,7 @@ namespace TestGetClassWith_GetType
             Console.WriteLine("\n");
             System.Windows.Forms.TreeView arrangeResults = GetAlgorithm(group);
             arrangeResults.Dock = System.Windows.Forms.DockStyle.Fill;
+            arrangeResults.ExpandAll();
             //arrangeResults.Click += Program.TreeViewClick; 
             arrangeResults.AfterSelect += Program.TreeViewAfterSelected;
 
