@@ -37,7 +37,7 @@ namespace TestGetClassWith_GetType
         {
             System.Windows.Forms.TreeView result = new System.Windows.Forms.TreeView();
 
-            Dictionary<string, int> FirstNodeIndex = new Dictionary<string, int>();
+            Dictionary<string, int> FirstLevelNodeIndex = new Dictionary<string, int>();
             int index = 0;
 
             const string judgeTarget = "Algorithm";
@@ -45,26 +45,30 @@ namespace TestGetClassWith_GetType
             foreach (IGrouping<string, Type> type in group)
             {
                 int strAlgorithmLocation = type.Key.IndexOf(judgeTarget);
-                bool isInAlgorithmNamespace = strAlgorithmLocation != -1;
+                bool isInAlgorithmNamespace = (strAlgorithmLocation != -1);
                 if (isInAlgorithmNamespace)
                 {
                     string key = type.Key.Substring(strAlgorithmLocation + judgeTarget.Length + 1);
                     string parentCategory, categoryName;
                     if (IsSecondLevel(key, out parentCategory, out categoryName))
                     {
-                        System.Windows.Forms.TreeNode temp = new System.Windows.Forms.TreeNode();
-                        temp.Nodes.Add(categoryName);
-                        foreach (Type element in type)
-                            temp.Nodes[0].Nodes.Add(element.Name);
+                        if (!FirstLevelNodeIndex.ContainsKey(parentCategory))
+                        {
+                            result.Nodes[0].Nodes.Add(parentCategory);
+                            FirstLevelNodeIndex.Add(parentCategory, index);
+                            index++;
+                        }
 
-                        result.Nodes[0].Nodes[FirstNodeIndex[parentCategory]].Nodes.Add(temp);
+                        result.Nodes[0].Nodes[FirstLevelNodeIndex[parentCategory]].Nodes.Add(categoryName);
+                        foreach (Type element in type)
+                            result.Nodes[0].Nodes[FirstLevelNodeIndex[parentCategory]].LastNode.Nodes.Add(element.Name);
                     }
                     else
                     {
                         result.Nodes[0].Nodes.Add(key);
-                        FirstNodeIndex.Add(key, index);
+                        FirstLevelNodeIndex.Add(key, index);
                         foreach (Type element in type)
-                            result.Nodes[0].Nodes[FirstNodeIndex[key]].Nodes.Add(element.Name);
+                            result.Nodes[0].Nodes[FirstLevelNodeIndex[key]].Nodes.Add(element.Name);
 
                         index++;
                     }
@@ -73,34 +77,6 @@ namespace TestGetClassWith_GetType
 
             return result;
         }
-        //private static System.Collections.ArrayList GetAlgorithm(IEnumerable<IGrouping<string, Type>> group)
-        //{
-        //    System.Collections.ArrayList result = new System.Collections.ArrayList();
-
-
-        //    const string judgeTarget = "Algorithm";
-        //    foreach (IGrouping<string, Type> type in group)
-        //    {
-        //        int strAlgorithmLocation = type.Key.IndexOf(judgeTarget);
-        //        bool isInAlgorithmNamespace = strAlgorithmLocation != -1;
-        //        if (isInAlgorithmNamespace)
-        //        {
-        //            string key = type.Key.Substring(strAlgorithmLocation + judgeTarget.Length + 1);
-        //            string parentCategory;
-        //            if (IsSecondLevel(key, out parentCategory))
-        //            {
-        //                //foreach (Type element in type)
-        //            }
-        //            else
-        //            {
-        //                foreach (Type element in type)
-
-        //            }
-        //        }
-        //    }
-
-        //    return result;
-        //}
 
         static void Main(string[] args)
         {
