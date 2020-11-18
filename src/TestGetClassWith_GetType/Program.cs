@@ -13,6 +13,21 @@ namespace TestGetClassWith_GetType
     /// </summary>
     class Program
     {
+        // Using AfterSelected event is frendly for getting node name.
+        private static void TreeViewAfterSelected(object sender, EventArgs e)
+        {
+            //System.Windows.Forms.MessageBox.Show(((System.Windows.Forms.TreeView)sender).SelectedNode.Text);
+            System.Windows.Forms.MessageBox.Show(((System.Windows.Forms.TreeView)sender).SelectedNode.FullPath);
+        }
+        
+        // if would like to implement getting node as TreeView clicked. Using Click event is not frendly and 
+        // will only show node name last click, not current click.
+        private static void TreeViewClick(object sender, EventArgs e)
+        {
+            //System.Windows.Forms.MessageBox.Show(((System.Windows.Forms.TreeView)sender).SelectedNode.Text);
+            //System.Windows.Forms.MessageBox.Show(((System.Windows.Forms.TreeView)sender).Parent.ToString());
+        }
+
         private static bool IsSecondLevel(string category, out string ParentCategory, out string name)
         {
             bool isSecondLevel = false;
@@ -108,6 +123,9 @@ namespace TestGetClassWith_GetType
             Console.WriteLine("\n");
             System.Windows.Forms.TreeView arrangeResults = GetAlgorithm(group);
             arrangeResults.Dock = System.Windows.Forms.DockStyle.Fill;
+            //arrangeResults.Click += Program.TreeViewClick; 
+            arrangeResults.AfterSelect += Program.TreeViewAfterSelected;
+
             System.Windows.Forms.Form form = new System.Windows.Forms.Form();
             form.Controls.Add(arrangeResults);
 
