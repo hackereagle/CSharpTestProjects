@@ -33,6 +33,7 @@ namespace TestDatagridviewHaveChk
             dgv.ColumnHeadersDefaultCellStyle.Font = new Font(dgv.Font, FontStyle.Bold);
             dgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgv.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells;
+            dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             // with this setting, I can not use DataGridView.NewRowIndex property. DataGridView.NewRowIndex would be -1 ever
             // refer to https://stackoverflow.com/questions/31990665/adding-new-row-to-the-bottom-of-datagridview
             dgv.AllowUserToAddRows = false; 
@@ -49,6 +50,8 @@ namespace TestDatagridviewHaveChk
             dgv.Columns[(int)DgvColContain.Name].Name = "Name";
 
             dgv.Columns[(int)DgvColContain.Priority].ReadOnly = true;
+            dgv.Columns[(int)DgvColContain.Priority].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv.Columns[(int)DgvColContain.IsUsed].ReadOnly = false;
             dgv.Columns[(int)DgvColContain.Algorithm].ReadOnly = true;
             dgv.Columns[(int)DgvColContain.Name].ReadOnly = true;
 
