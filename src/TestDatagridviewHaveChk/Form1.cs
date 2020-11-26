@@ -80,6 +80,7 @@ namespace TestDatagridviewHaveChk
             //    dgvTest.SelectedRows[0].Index != dgvTest.Rows.Count - 1)
             if (dgvTest.SelectedRows.Count > 0)
             {
+                System.Windows.Forms.MessageBox.Show("");
                 dgvTest.Rows.RemoveAt(dgvTest.SelectedRows[0].Index);
             }
         }

@@ -93,6 +93,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestGetClassWith_GetType", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestOverloadLogicOperator", "src\TestOverloadLogicOperator\TestOverloadLogicOperator.csproj", "{A9FB84F4-0AB9-4072-B4A7-461920F5D0E4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestAbstractClassAndChildClassCtorOrder", "src\TestAbstractClassAndChildClassCtorOrder\TestAbstractClassAndChildClassCtorOrder.csproj", "{15A6AA5E-58EE-4000-80A6-D42EDCAC0C82}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -593,6 +595,18 @@ Global
 		{A9FB84F4-0AB9-4072-B4A7-461920F5D0E4}.Release|x64.Build.0 = Release|Any CPU
 		{A9FB84F4-0AB9-4072-B4A7-461920F5D0E4}.Release|x86.ActiveCfg = Release|Any CPU
 		{A9FB84F4-0AB9-4072-B4A7-461920F5D0E4}.Release|x86.Build.0 = Release|Any CPU
+		{15A6AA5E-58EE-4000-80A6-D42EDCAC0C82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15A6AA5E-58EE-4000-80A6-D42EDCAC0C82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15A6AA5E-58EE-4000-80A6-D42EDCAC0C82}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{15A6AA5E-58EE-4000-80A6-D42EDCAC0C82}.Debug|x64.Build.0 = Debug|Any CPU
+		{15A6AA5E-58EE-4000-80A6-D42EDCAC0C82}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{15A6AA5E-58EE-4000-80A6-D42EDCAC0C82}.Debug|x86.Build.0 = Debug|Any CPU
+		{15A6AA5E-58EE-4000-80A6-D42EDCAC0C82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15A6AA5E-58EE-4000-80A6-D42EDCAC0C82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15A6AA5E-58EE-4000-80A6-D42EDCAC0C82}.Release|x64.ActiveCfg = Release|Any CPU
+		{15A6AA5E-58EE-4000-80A6-D42EDCAC0C82}.Release|x64.Build.0 = Release|Any CPU
+		{15A6AA5E-58EE-4000-80A6-D42EDCAC0C82}.Release|x86.ActiveCfg = Release|Any CPU
+		{15A6AA5E-58EE-4000-80A6-D42EDCAC0C82}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
