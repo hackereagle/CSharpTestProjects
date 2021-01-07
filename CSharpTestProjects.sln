@@ -95,6 +95,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestOverloadLogicOperator",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestAbstractClassAndChildClassCtorOrder", "src\TestAbstractClassAndChildClassCtorOrder\TestAbstractClassAndChildClassCtorOrder.csproj", "{15A6AA5E-58EE-4000-80A6-D42EDCAC0C82}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestCreateInstanceByAssembly", "src\TestCreateInstanceByAssembly\TestCreateInstanceByAssembly.csproj", "{B6667174-B397-40FE-9BC1-A667CDDE2910}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -607,6 +609,18 @@ Global
 		{15A6AA5E-58EE-4000-80A6-D42EDCAC0C82}.Release|x64.Build.0 = Release|Any CPU
 		{15A6AA5E-58EE-4000-80A6-D42EDCAC0C82}.Release|x86.ActiveCfg = Release|Any CPU
 		{15A6AA5E-58EE-4000-80A6-D42EDCAC0C82}.Release|x86.Build.0 = Release|Any CPU
+		{B6667174-B397-40FE-9BC1-A667CDDE2910}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6667174-B397-40FE-9BC1-A667CDDE2910}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6667174-B397-40FE-9BC1-A667CDDE2910}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{B6667174-B397-40FE-9BC1-A667CDDE2910}.Debug|x64.Build.0 = Debug|Any CPU
+		{B6667174-B397-40FE-9BC1-A667CDDE2910}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B6667174-B397-40FE-9BC1-A667CDDE2910}.Debug|x86.Build.0 = Debug|Any CPU
+		{B6667174-B397-40FE-9BC1-A667CDDE2910}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6667174-B397-40FE-9BC1-A667CDDE2910}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6667174-B397-40FE-9BC1-A667CDDE2910}.Release|x64.ActiveCfg = Release|Any CPU
+		{B6667174-B397-40FE-9BC1-A667CDDE2910}.Release|x64.Build.0 = Release|Any CPU
+		{B6667174-B397-40FE-9BC1-A667CDDE2910}.Release|x86.ActiveCfg = Release|Any CPU
+		{B6667174-B397-40FE-9BC1-A667CDDE2910}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
