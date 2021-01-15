@@ -9,27 +9,43 @@
   <Window.DataContext>
     <local:ViewModel />
   </Window.DataContext>
-  <Grid>
-    <!--<Grid.RowDefinitions>
-        <RowDefinition Height="*"/>
-        <RowDefinition Height="*"/>
-        <RowDefinition Height="*"/>
-        <RowDefinition Height="*"/>
-    </Grid.RowDefinitions>-->
-    <!--<Grid Grid.Row="0">
-            <Label Content="身高" HorizontalAlignment="Left" Margin="41,55,0,0" VerticalAlignment="Top"/>
-            <TextBox x:Name="txtHeight" HorizontalAlignment="Left" Height="23" Margin="120,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        </Grid>
-        <Grid Grid.Row="1">
-            <Label Content="體重" HorizontalAlignment="Left" Margin="41,95,0,0" VerticalAlignment="Top"/>
-            <TextBox x:Name="txtWeight" HorizontalAlignment="Left" Height="23" Margin="120,99,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        </Grid>-->
+  <Grid ShowGridLines="True">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+    <Grid Grid.Row="0" ShowGridLines="True">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="1*"/>
+        <ColumnDefinition Width="2*"/>
+      </Grid.ColumnDefinitions>
+      <Label Grid.Column="0" Content="身高" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+      <TextBox Grid.Column="1" x:Name="txtHeight" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Text="{Binding Height}"/>
+    </Grid>
+    <Grid Grid.Row="1" ShowGridLines="True">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="1*"/>
+        <ColumnDefinition Width="2*"/>
+      </Grid.ColumnDefinitions>
+      <Label Grid.Column="0" Content="體重" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+      <TextBox Grid.Column="1" x:Name="txtWeight" HorizontalAlignment="Center"  TextWrapping="Wrap" VerticalAlignment="Center"  Text="{Binding Weight}"/>
+    </Grid>
+    <Grid Grid.Row="2">
+      <Button x:Name="btnCalculate" Content="Calculate BMI" HorizontalAlignment="Center" VerticalAlignment="Center" Command="{Binding Command}" />
+    </Grid>
+    <Grid Grid.Row="3">
+      <TextBlock x:Name="txbDisp" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding BMI}" VerticalAlignment="Center" Grid.Row="3" />
+    </Grid>
+
     <!--<Button x:Name="btnCalculate" Content="Button" HorizontalAlignment="Left" Margin="81,144,0,0" VerticalAlignment="Top" Width="75" Click="btnCalculate_Click"/>-->
-    <Button x:Name="btnCalculate" Content="Calculate BMI" HorizontalAlignment="Left" Margin="81,144,0,0" VerticalAlignment="Top" Width="109" Command="{Binding Command}" Height="28"/>
-    <TextBlock x:Name="txbDisp" HorizontalAlignment="Left" Margin="86,186,0,0" TextWrapping="Wrap" Text="{Binding BMI}" VerticalAlignment="Top" />
-    <Label Content="體重" HorizontalAlignment="Left" Margin="41,95,0,0" VerticalAlignment="Top"/>
-    <TextBox x:Name="txtWeight" HorizontalAlignment="Left" Height="23" Margin="120,99,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="{Binding Weight}"/>
-    <Label Content="身高" HorizontalAlignment="Left" Margin="41,55,0,0" VerticalAlignment="Top"/>
-    <TextBox x:Name="txtHeight" HorizontalAlignment="Left" Height="23" Margin="120,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="{Binding Height}"/>
+
+    <!--<Button x:Name="btnCalculate" Content="Calculate BMI" HorizontalAlignment="Left" Margin="81,144,0,0" VerticalAlignment="Top" Width="109" Command="{Binding Command}" Height="28"/>
+    <TextBlock x:Name="txbDisp" HorizontalAlignment="Left" Margin="86,186,0,0" TextWrapping="Wrap" Text="{Binding BMI}" VerticalAlignment="Top" />-->
+    <!--<Label Content="體重" HorizontalAlignment="Left" Margin="41,95,0,0" VerticalAlignment="Top"/>
+    <TextBox x:Name="txtWeight" HorizontalAlignment="Left" Height="23" Margin="120,99,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="{Binding Weight}"/>-->
+    <!--<Label Content="身高" HorizontalAlignment="Left" Margin="41,55,0,0" VerticalAlignment="Top"/>
+    <TextBox x:Name="txtHeight" HorizontalAlignment="Left" Height="23" Margin="120,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="{Binding Height}"/>-->
   </Grid>
 </Window>
