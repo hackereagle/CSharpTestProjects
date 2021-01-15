@@ -37,11 +37,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="halcondotnetxl">
-      <HintPath>..\..\..\..\..\..\..\Program Files\Halcon1202\bin\dotnet35\halcondotnetxl.dll</HintPath>
+      <HintPath>C:\Program Files\MVTec\HALCON-12.0\bin\dotnet35\halcondotnetxl.dll</HintPath>
     </Reference>
     <Reference Include="ImageVisualizer, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Bin\ImageVisualizer.dll</HintPath>
+      <HintPath>..\..\Bin\ImageVisualizer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualStudio.DebuggerVisualizers, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

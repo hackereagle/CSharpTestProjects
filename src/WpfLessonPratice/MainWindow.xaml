@@ -1,0 +1,35 @@
+﻿<Window x:Class="WpfLessonPratice.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfLessonPratice"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="288.068" Width="315.909">
+  <Window.DataContext>
+    <local:ViewModel />
+  </Window.DataContext>
+  <Grid>
+    <!--<Grid.RowDefinitions>
+        <RowDefinition Height="*"/>
+        <RowDefinition Height="*"/>
+        <RowDefinition Height="*"/>
+        <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>-->
+    <!--<Grid Grid.Row="0">
+            <Label Content="身高" HorizontalAlignment="Left" Margin="41,55,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="txtHeight" HorizontalAlignment="Left" Height="23" Margin="120,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Label Content="體重" HorizontalAlignment="Left" Margin="41,95,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="txtWeight" HorizontalAlignment="Left" Height="23" Margin="120,99,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        </Grid>-->
+    <!--<Button x:Name="btnCalculate" Content="Button" HorizontalAlignment="Left" Margin="81,144,0,0" VerticalAlignment="Top" Width="75" Click="btnCalculate_Click"/>-->
+    <Button x:Name="btnCalculate" Content="Calculate BMI" HorizontalAlignment="Left" Margin="81,144,0,0" VerticalAlignment="Top" Width="109" Command="{Binding Command}" Height="28"/>
+    <TextBlock x:Name="txbDisp" HorizontalAlignment="Left" Margin="86,186,0,0" TextWrapping="Wrap" Text="{Binding BMI}" VerticalAlignment="Top" />
+    <Label Content="體重" HorizontalAlignment="Left" Margin="41,95,0,0" VerticalAlignment="Top"/>
+    <TextBox x:Name="txtWeight" HorizontalAlignment="Left" Height="23" Margin="120,99,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="{Binding Weight}"/>
+    <Label Content="身高" HorizontalAlignment="Left" Margin="41,55,0,0" VerticalAlignment="Top"/>
+    <TextBox x:Name="txtHeight" HorizontalAlignment="Left" Height="23" Margin="120,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="{Binding Height}"/>
+  </Grid>
+</Window>
