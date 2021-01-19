@@ -136,18 +136,63 @@ namespace TestHalconSmartWindowDrawRoi
             }
         }
 
-        public void DispAllRoi(List<HalconDotNet.HRegion> rois)
+        public void DispAllRoi(List<MyRegion> rois)
         {
+            if (mHDrawRegions.Count > 0)
+                DeleteRoi(DeleteType.All);
+
+            foreach (MyRegion roi in rois)
+            {
+                mHDrawRegions.Add(TransMyRegion2HDrawingObject(roi));
+                mHWindow.AttachDrawingObjectToWindow(mHDrawRegions.Last());
+            }
         }
 
-        public List<HalconDotNet.HRegion> GetRegion()
+        private HalconDotNet.HDrawingObject TransMyRegion2HDrawingObject(MyRegion myRegion)
         {
-            List<HalconDotNet.HRegion> region = new List<HalconDotNet.HRegion>();
+            HalconDotNet.HDrawingObject hDrawingObject = new HalconDotNet.HDrawingObject();
+            if (RoiType.Rectangle == myRegion.Type)
+            {
+                int row1, col1, row2, col2;
+                myRegion.Region.SmallestRectangle1(out row1, out col1, out row2, out col2);
+                hDrawingObject.CreateDrawingObjectRectangle1(row1, col1, row2, col2);
+            }
+            if (RoiType.Circle == myRegion.Type)
+            {
+                int row1, col1, row2, col2;
+                myRegion.Region.SmallestRectangle1(out row1, out col1, out row2, out col2);
+                hDrawingObject.CreateDrawingObjectCircle((row1 + row2) / 2, (col1 + col2) / 2, row2 - row1);
+            }
+
+            return hDrawingObject;
+        }
+
+        public List<MyRegion> GetRegions()
+        {
+            List<MyRegion> regions = new List<MyRegion>();
             foreach (HalconDotNet.HDrawingObject obj in mHDrawRegions)
             {
-                region.Add((HalconDotNet.HRegion)obj.GetDrawingObjectIconic());
+                regions.Add(new MyRegion(GetRoiType(obj), new HalconDotNet.HRegion(obj.GetDrawingObjectIconic())) );
             }
-            return region;
+            return regions;
+        }
+
+        private RoiType GetRoiType(HalconDotNet.HDrawingObject hDrawingObject)
+        {
+            RoiType type;
+            string objType = hDrawingObject.GetDrawingObjectParams("type");
+            switch (objType)
+            {
+                case "rectangle1":
+                    type = RoiType.Rectangle;
+                    return type;
+                case "circle":
+                    type = RoiType.Circle;
+                    return type;
+                default:
+                    return RoiType.Rectangle;
+            }
+            //return type;
         }
     }
 }

@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace TestHalconSmartWindowDrawRoi
 {
@@ -57,6 +59,36 @@ namespace TestHalconSmartWindowDrawRoi
         private void btnDeleteAll_Click(object sender, EventArgs e)
         {
             mController.DeleteRoi(DeleteType.All);
+        }
+
+        private const string RCP_FILE_NAME = "testRcp";
+        private void btnTestSaveRegion_Click(object sender, EventArgs e)
+        {
+            List<MyRegion> myRegions = mController.GetRegions();
+            System.IO.FileStream fileStream = new System.IO.FileStream(RCP_FILE_NAME, System.IO.FileMode.OpenOrCreate);
+            //System.Xml.Serialization.XmlSerializer serializer = new System.Xml.Serialization.XmlSerializer(typeof(MyRegion));
+
+            //System.Xml.XmlWriter writer = new System.Xml.XmlTextWriter(fileStream, Encoding.Unicode);
+            //serializer.Serialize(writer, myRegions);
+            //writer.Close();
+            BinaryFormatter binaryFormatter = new BinaryFormatter();
+            binaryFormatter.Serialize(fileStream, myRegions);
+            fileStream.Close();
+        }
+
+        private void btnTestReadRegion_Click(object sender, EventArgs e)
+        {
+            if (System.IO.File.Exists(RCP_FILE_NAME))
+            {
+                List<MyRegion> obj;
+                System.IO.FileStream stream = new System.IO.FileStream(RCP_FILE_NAME, System.IO.FileMode.Open);
+                BinaryFormatter binaryFormatter = new BinaryFormatter();
+                obj = (List<MyRegion>)binaryFormatter.Deserialize(stream);
+
+                stream.Close();
+
+                mController.DispAllRoi(obj);
+            }
         }
     }
 }

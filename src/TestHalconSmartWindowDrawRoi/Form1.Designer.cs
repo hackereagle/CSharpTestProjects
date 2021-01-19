@@ -36,6 +36,8 @@
             this.btnAddRect = new System.Windows.Forms.Button();
             this.btnDrawPolygon = new System.Windows.Forms.Button();
             this.btnDeleteAll = new System.Windows.Forms.Button();
+            this.btnTestSaveRegion = new System.Windows.Forms.Button();
+            this.btnTestReadRegion = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -76,6 +78,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnTestReadRegion);
+            this.groupBox1.Controls.Add(this.btnTestSaveRegion);
             this.groupBox1.Controls.Add(this.btnDeleteAll);
             this.groupBox1.Controls.Add(this.btnDrawPolygon);
             this.groupBox1.Controls.Add(this.btnDelete);
@@ -139,6 +143,26 @@
             this.btnDeleteAll.UseVisualStyleBackColor = true;
             this.btnDeleteAll.Click += new System.EventHandler(this.btnDeleteAll_Click);
             // 
+            // btnTestSaveRegion
+            // 
+            this.btnTestSaveRegion.Location = new System.Drawing.Point(114, 207);
+            this.btnTestSaveRegion.Name = "btnTestSaveRegion";
+            this.btnTestSaveRegion.Size = new System.Drawing.Size(139, 39);
+            this.btnTestSaveRegion.TabIndex = 5;
+            this.btnTestSaveRegion.Text = "Test Save Regions";
+            this.btnTestSaveRegion.UseVisualStyleBackColor = true;
+            this.btnTestSaveRegion.Click += new System.EventHandler(this.btnTestSaveRegion_Click);
+            // 
+            // btnTestReadRegion
+            // 
+            this.btnTestReadRegion.Location = new System.Drawing.Point(114, 265);
+            this.btnTestReadRegion.Name = "btnTestReadRegion";
+            this.btnTestReadRegion.Size = new System.Drawing.Size(138, 41);
+            this.btnTestReadRegion.TabIndex = 6;
+            this.btnTestReadRegion.Text = "Test Read Region";
+            this.btnTestReadRegion.UseVisualStyleBackColor = true;
+            this.btnTestReadRegion.Click += new System.EventHandler(this.btnTestReadRegion_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -163,6 +187,8 @@
         private System.Windows.Forms.Button btnAddRect;
         private System.Windows.Forms.Button btnDrawPolygon;
         private System.Windows.Forms.Button btnDeleteAll;
+        private System.Windows.Forms.Button btnTestReadRegion;
+        private System.Windows.Forms.Button btnTestSaveRegion;
     }
 }
 
