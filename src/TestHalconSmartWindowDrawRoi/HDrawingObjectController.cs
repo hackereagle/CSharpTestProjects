@@ -145,6 +145,15 @@ namespace TestHalconSmartWindowDrawRoi
             {
                 mHDrawRegions.Add(TransMyRegion2HDrawingObject(roi));
                 mHWindow.AttachDrawingObjectToWindow(mHDrawRegions.Last());
+                HalconDotNet.HDrawingObject.HDrawingObjectCallback test = Callback;
+                IntPtr callback = System.Runtime.InteropServices.Marshal.GetFunctionPointerForDelegate(test);
+                HalconDotNet.HTuple listenTo = new HalconDotNet.HTuple("on_select", "on_attach", "on_detach", "on_drag", "on_resize"); // in order to try order events
+
+                if (mHWindow != null)
+                    mHWindow.AttachDrawingObjectToWindow(mHDrawRegions.Last());
+
+                mHDrawRegions.Last().SetDrawingObjectCallback(listenTo, new HalconDotNet.HTuple(callback));
+                mCurrentRoiId = mHDrawRegions.Last().ID;
             }
         }
 
@@ -161,7 +170,7 @@ namespace TestHalconSmartWindowDrawRoi
             {
                 int row1, col1, row2, col2;
                 myRegion.Region.SmallestRectangle1(out row1, out col1, out row2, out col2);
-                hDrawingObject.CreateDrawingObjectCircle((row1 + row2) / 2, (col1 + col2) / 2, row2 - row1);
+                hDrawingObject.CreateDrawingObjectCircle((row1 + row2) / 2, (col1 + col2) / 2, (row2 - row1) / 2);
             }
 
             return hDrawingObject;

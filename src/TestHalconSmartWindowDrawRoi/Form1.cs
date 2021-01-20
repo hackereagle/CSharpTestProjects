@@ -66,6 +66,7 @@ namespace TestHalconSmartWindowDrawRoi
         {
             List<MyRegion> myRegions = mController.GetRegions();
             System.IO.FileStream fileStream = new System.IO.FileStream(RCP_FILE_NAME, System.IO.FileMode.OpenOrCreate);
+            // Halcon.Region can not be serialized to xml, because HRegion is without public field.
             //System.Xml.Serialization.XmlSerializer serializer = new System.Xml.Serialization.XmlSerializer(typeof(MyRegion));
 
             //System.Xml.XmlWriter writer = new System.Xml.XmlTextWriter(fileStream, Encoding.Unicode);
@@ -89,6 +90,13 @@ namespace TestHalconSmartWindowDrawRoi
 
                 mController.DispAllRoi(obj);
             }
+        }
+
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            HalconDotNet.HImage img = new HalconDotNet.HImage();
+            img.ReadImage("D:/Rorze_Data/Projects/lena.bmp");
+            hswDisplay.HalconWindow.DispObj(img);
         }
     }
 }
