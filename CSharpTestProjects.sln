@@ -103,6 +103,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDiffEncodingGetBytesLen
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestHalconSmartWindowDrawRoi", "src\TestHalconSmartWindowDrawRoi\TestHalconSmartWindowDrawRoi.csproj", "{653CFFFA-78A9-420F-9053-28F5D87989AF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestAddDelegate", "src\TestAddDelegate\TestAddDelegate.csproj", "{E7D21D08-85F4-47FF-B0AC-291C7E3A8C6F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -663,6 +665,18 @@ Global
 		{653CFFFA-78A9-420F-9053-28F5D87989AF}.Release|x64.Build.0 = Release|Any CPU
 		{653CFFFA-78A9-420F-9053-28F5D87989AF}.Release|x86.ActiveCfg = Release|Any CPU
 		{653CFFFA-78A9-420F-9053-28F5D87989AF}.Release|x86.Build.0 = Release|Any CPU
+		{E7D21D08-85F4-47FF-B0AC-291C7E3A8C6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7D21D08-85F4-47FF-B0AC-291C7E3A8C6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7D21D08-85F4-47FF-B0AC-291C7E3A8C6F}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{E7D21D08-85F4-47FF-B0AC-291C7E3A8C6F}.Debug|x64.Build.0 = Debug|Any CPU
+		{E7D21D08-85F4-47FF-B0AC-291C7E3A8C6F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E7D21D08-85F4-47FF-B0AC-291C7E3A8C6F}.Debug|x86.Build.0 = Debug|Any CPU
+		{E7D21D08-85F4-47FF-B0AC-291C7E3A8C6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7D21D08-85F4-47FF-B0AC-291C7E3A8C6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7D21D08-85F4-47FF-B0AC-291C7E3A8C6F}.Release|x64.ActiveCfg = Release|Any CPU
+		{E7D21D08-85F4-47FF-B0AC-291C7E3A8C6F}.Release|x64.Build.0 = Release|Any CPU
+		{E7D21D08-85F4-47FF-B0AC-291C7E3A8C6F}.Release|x86.ActiveCfg = Release|Any CPU
+		{E7D21D08-85F4-47FF-B0AC-291C7E3A8C6F}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
