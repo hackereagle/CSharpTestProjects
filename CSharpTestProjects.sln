@@ -107,6 +107,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestAddDelegate", "src\Test
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestSerializeFeature", "src\TestSerializeFeature\TestSerializeFeature.csproj", "{755E5CDE-359C-4393-BC5C-A39BC76F01D4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestLinqFeature", "src\TestLinqFeature\TestLinqFeature.csproj", "{A4269EDD-1869-4433-9232-BAFE85357BD5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -691,6 +693,18 @@ Global
 		{755E5CDE-359C-4393-BC5C-A39BC76F01D4}.Release|x64.Build.0 = Release|Any CPU
 		{755E5CDE-359C-4393-BC5C-A39BC76F01D4}.Release|x86.ActiveCfg = Release|Any CPU
 		{755E5CDE-359C-4393-BC5C-A39BC76F01D4}.Release|x86.Build.0 = Release|Any CPU
+		{A4269EDD-1869-4433-9232-BAFE85357BD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4269EDD-1869-4433-9232-BAFE85357BD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4269EDD-1869-4433-9232-BAFE85357BD5}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{A4269EDD-1869-4433-9232-BAFE85357BD5}.Debug|x64.Build.0 = Debug|Any CPU
+		{A4269EDD-1869-4433-9232-BAFE85357BD5}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A4269EDD-1869-4433-9232-BAFE85357BD5}.Debug|x86.Build.0 = Debug|Any CPU
+		{A4269EDD-1869-4433-9232-BAFE85357BD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4269EDD-1869-4433-9232-BAFE85357BD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4269EDD-1869-4433-9232-BAFE85357BD5}.Release|x64.ActiveCfg = Release|Any CPU
+		{A4269EDD-1869-4433-9232-BAFE85357BD5}.Release|x64.Build.0 = Release|Any CPU
+		{A4269EDD-1869-4433-9232-BAFE85357BD5}.Release|x86.ActiveCfg = Release|Any CPU
+		{A4269EDD-1869-4433-9232-BAFE85357BD5}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

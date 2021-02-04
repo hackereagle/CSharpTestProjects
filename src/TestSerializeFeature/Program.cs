@@ -130,6 +130,20 @@ namespace TestSerializeFeature
             }
             read.PrintInfo();
 
+
+            // Test creating a empty file and do Deserialize
+            //Console.WriteLine("\nTest creating a empty file and do Deserialize");
+            //string emptyFile = "testEmptyFile.bin";
+            //System.IO.File.Create(emptyFile).Close();
+            //TestSerialize testReadEmpty;
+            //using (System.IO.FileStream stream = new System.IO.FileStream(emptyFile, System.IO.FileMode.Open))
+            //{
+            //    BinaryFormatter binaryFormatter = new BinaryFormatter();
+            //    testReadEmpty = (TestSerialize)binaryFormatter.Deserialize(stream); // here will occure error about deserialize empty data
+            //    stream.Close();
+            //}
+            //read.PrintInfo();
+
             Console.ReadLine();
         }
     }
@@ -150,4 +164,5 @@ namespace TestSerializeFeature
     // 1. If all need serializable, it must be set Serializable attribute.
     // 2. If a class need serializable, it must be implement ISerializable. 
     //    But its fields which need be serialized can do not implement ISerializable, serialized fields only need setting Serializable attribute.
+    // 3. Can not deserialize empty file.
 }
