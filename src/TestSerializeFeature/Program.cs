@@ -144,6 +144,8 @@ namespace TestSerializeFeature
             //}
             //read.PrintInfo();
 
+            //TestDeSerializeEmptyFileWithDefDeserialize.Test();
+
             Console.ReadLine();
         }
     }

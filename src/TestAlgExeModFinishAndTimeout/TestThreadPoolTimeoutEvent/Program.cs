@@ -36,14 +36,18 @@ namespace TestThreadPoolTimeoutEvent
         static void Main(string[] args)
         {
             // setting threadpool
-            System.Threading.ThreadPool.SetMinThreads(1, 1);
-            System.Threading.ThreadPool.SetMaxThreads(4, 4);
+            //System.Threading.ThreadPool.SetMinThreads(1, 1);
+            //System.Threading.ThreadPool.SetMaxThreads(4, 4);
 
             List<AlgBase> algorithms = new List<AlgBase>();
             algorithms.Add(new Algorithm1("test1"));
             algorithms.Add(new Algorithm2("test2"));
             algorithms.Add(new Algorithm3("test3"));
-            algorithms.Add(new Algorithm2("test4"));
+            algorithms.Add(new Algorithm1("test4"));
+            algorithms.Add(new Algorithm2("test5"));
+            algorithms.Add(new Algorithm3("test6"));
+            algorithms.Add(new Algorithm1("test7"));
+            algorithms.Add(new Algorithm2("test8"));
 
             eventX.Reset();
             System.Threading.WaitCallback workUnit = new System.Threading.WaitCallback(ExecuteAlgorithm);
@@ -57,7 +61,7 @@ namespace TestThreadPoolTimeoutEvent
                 System.Threading.ThreadPool.QueueUserWorkItem(workUnit, param);
             }
 
-            if (eventX.WaitOne(20000, true) == false)
+            if (eventX.WaitOne(7000, true) == false)
             {
                 Console.WriteLine($"{System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss.fff")}: Have one timeout!");
             }

@@ -15,6 +15,7 @@ namespace TestTaskTimeout
         {
             Console.WriteLine($"{System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss.fff")}: ThreadID:{System.Threading.Thread.CurrentThread.ManagedThreadId}, run Algorithm2, name:{mName}");
             System.Threading.Thread.Sleep(4000);
+            //Task.Delay(4000);
             Console.WriteLine($"{System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss.fff")}: ThreadID:{System.Threading.Thread.CurrentThread.ManagedThreadId}, name:{mName} finish!");
             return true;
         }

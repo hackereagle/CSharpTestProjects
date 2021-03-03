@@ -51,7 +51,11 @@ namespace TestTaskTimeout
             algorithms.Add(new Algorithm1("test1"));
             algorithms.Add(new Algorithm2("test2"));
             algorithms.Add(new Algorithm3("test3"));
-            algorithms.Add(new Algorithm2("test4"));
+            algorithms.Add(new Algorithm1("test4"));
+            algorithms.Add(new Algorithm2("test5"));
+            algorithms.Add(new Algorithm3("test6"));
+            algorithms.Add(new Algorithm1("test7"));
+            algorithms.Add(new Algorithm2("test8"));
 
             var tasks = new List<Task<bool>>();
             mResult = new bool[algorithms.Count];
