@@ -22,21 +22,15 @@ namespace TestHalconSmartWindowDrawRoi
             mController = new HDrawingObjectController(this.hswDisplay.HalconWindow);
         }
 
-        //private HalconDotNet.HDrawingObject mDrawing = new HalconDotNet.HDrawingObject(); // version 1
-        //private List<HalconDotNet.HDrawingObject> mDrawing = new List<HalconDotNet.HDrawingObject>(); // version 2
+        //private HalconDotNet.HDrawingObject mDrawing = new HalconDotNet.HDrawingObject(); // 簡單的使用：宣告
         private HDrawingObjectController mController;
         private void btnAddRect_Click(object sender, EventArgs e)
         {
-            // version 1: test how to add region
+            // 簡單的使用: test how to add region
             //if (mDrawing != null)
             //    mDrawing.Dispose();
-            //mDrawing.CreateDrawingObjectRectangle1(100, 100, 500, 500);
-            //hswDisplay.HalconWindow.AttachDrawingObjectToWindow(mDrawing);
-
-            // version 2: put into list
-            //mDrawing.Add(new HalconDotNet.HDrawingObject());
-            //mDrawing.Last().CreateDrawingObjectRectangle1(100, 100, 500, 500);
-            //hswDisplay.HalconWindow.AttachDrawingObjectToWindow(mDrawing.Last());
+            //mDrawing.CreateDrawingObjectRectangle1(100, 100, 500, 500); // 建立一個矩形ROI
+            //hswDisplay.HalconWindow.AttachDrawingObjectToWindow(mDrawing); // 將建立的ROI放到HalconWindow中
 
             mController.AddRoi(RoiType.Rectangle);
         }
