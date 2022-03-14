@@ -19,7 +19,7 @@ namespace SequencesManager.Base
         #endregion "Abstract Parameters"
 
         #region "Abstract Function"
-        protected abstract bool _Execute();
+        protected abstract bool mExecute();
         public abstract bool Reset();
         #endregion "Abstract Function"
 
@@ -33,7 +33,7 @@ namespace SequencesManager.Base
             {
                 bool ret = false;
 
-                ret = this._Execute();
+                ret = this.mExecute();
                 if (OnExecuted != null)
                     OnExecute.Invoke();
 

@@ -121,6 +121,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ArchitectureTest", "Archite
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SequencesManager", "src\SequencesManager\SequencesManager.csproj", "{7257EF83-1051-43BD-A30D-98516FAA1F33}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestListReleaseMemory", "src\TestListReleaseMemory\TestListReleaseMemory.csproj", "{4A32767B-211A-4C5B-ABBC-F03946405568}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -753,6 +755,18 @@ Global
 		{7257EF83-1051-43BD-A30D-98516FAA1F33}.Release|x64.Build.0 = Release|Any CPU
 		{7257EF83-1051-43BD-A30D-98516FAA1F33}.Release|x86.ActiveCfg = Release|Any CPU
 		{7257EF83-1051-43BD-A30D-98516FAA1F33}.Release|x86.Build.0 = Release|Any CPU
+		{4A32767B-211A-4C5B-ABBC-F03946405568}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A32767B-211A-4C5B-ABBC-F03946405568}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A32767B-211A-4C5B-ABBC-F03946405568}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{4A32767B-211A-4C5B-ABBC-F03946405568}.Debug|x64.Build.0 = Debug|Any CPU
+		{4A32767B-211A-4C5B-ABBC-F03946405568}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4A32767B-211A-4C5B-ABBC-F03946405568}.Debug|x86.Build.0 = Debug|Any CPU
+		{4A32767B-211A-4C5B-ABBC-F03946405568}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A32767B-211A-4C5B-ABBC-F03946405568}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A32767B-211A-4C5B-ABBC-F03946405568}.Release|x64.ActiveCfg = Release|Any CPU
+		{4A32767B-211A-4C5B-ABBC-F03946405568}.Release|x64.Build.0 = Release|Any CPU
+		{4A32767B-211A-4C5B-ABBC-F03946405568}.Release|x86.ActiveCfg = Release|Any CPU
+		{4A32767B-211A-4C5B-ABBC-F03946405568}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

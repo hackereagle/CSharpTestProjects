@@ -61,7 +61,7 @@ namespace TestThreadPoolTimeoutEvent
                 System.Threading.ThreadPool.QueueUserWorkItem(workUnit, param);
             }
 
-            if (eventX.WaitOne(7000, true) == false)
+            if (eventX.WaitOne(7000, false) == false)
             {
                 Console.WriteLine($"{System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss.fff")}: Have one timeout!");
             }
