@@ -87,6 +87,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestCtrlInheritanceInterfac
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestRemoveElemFromStrArr", "src\TestRemoveElemFromStrArr\TestRemoveElemFromStrArr.csproj", "{1526F1B7-E364-4EBE-AF0F-6ED803314369}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDisposedObjEvent", "TestDisposedObjEvent\TestDisposedObjEvent.csproj", "{F4D6F441-2819-400D-8B83-9DFC7A7F2D9C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -551,6 +553,18 @@ Global
 		{1526F1B7-E364-4EBE-AF0F-6ED803314369}.Release|x64.Build.0 = Release|Any CPU
 		{1526F1B7-E364-4EBE-AF0F-6ED803314369}.Release|x86.ActiveCfg = Release|Any CPU
 		{1526F1B7-E364-4EBE-AF0F-6ED803314369}.Release|x86.Build.0 = Release|Any CPU
+		{F4D6F441-2819-400D-8B83-9DFC7A7F2D9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4D6F441-2819-400D-8B83-9DFC7A7F2D9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4D6F441-2819-400D-8B83-9DFC7A7F2D9C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{F4D6F441-2819-400D-8B83-9DFC7A7F2D9C}.Debug|x64.Build.0 = Debug|Any CPU
+		{F4D6F441-2819-400D-8B83-9DFC7A7F2D9C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F4D6F441-2819-400D-8B83-9DFC7A7F2D9C}.Debug|x86.Build.0 = Debug|Any CPU
+		{F4D6F441-2819-400D-8B83-9DFC7A7F2D9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4D6F441-2819-400D-8B83-9DFC7A7F2D9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4D6F441-2819-400D-8B83-9DFC7A7F2D9C}.Release|x64.ActiveCfg = Release|Any CPU
+		{F4D6F441-2819-400D-8B83-9DFC7A7F2D9C}.Release|x64.Build.0 = Release|Any CPU
+		{F4D6F441-2819-400D-8B83-9DFC7A7F2D9C}.Release|x86.ActiveCfg = Release|Any CPU
+		{F4D6F441-2819-400D-8B83-9DFC7A7F2D9C}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
