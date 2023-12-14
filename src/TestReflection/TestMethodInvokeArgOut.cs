@@ -31,6 +31,7 @@ namespace TestReflection
                 arg2 = arg1 * 2;
                 refType = new ReferenceType();
                 refType.Value = arg1 * 3;
+                Console.WriteLine($"In MethodWithOutArg, refType hash = {refType.GetHashCode()}");
 
                 arg3 = arg1 * 4;
                 refType2.Value = refType2.Value * 5;
@@ -67,11 +68,20 @@ namespace TestReflection
             int testRefValue = 3;
             ReferenceType testRef = new ReferenceType(10);
             object[] parameters = new object[] { 3, receiver, refType, testRefValue, testRef };
+            //object[] parameters = new object[6] ;
+            //parameters[0] = 3;
+            //parameters[1] = receiver;
+            //parameters[2] = refType;
+            //parameters[3] = testRefValue;
+            //parameters[4] = testRef;
+            //parameters[5] = refTypeForOut2;
             invoker.CallMethod("MethodWithOutArg", parameters);
             // Due to the variable is valuable type, so .NET will box it to a reference type object.
             // We need to unbox it to over write the original variable.
             receiver = (int)parameters[1];
+            Console.WriteLine($"In RunTest, object of refType hash = {parameters[2].GetHashCode()}");
             refType = (ReferenceType)parameters[2];
+            Console.WriteLine($"In RunTest, refType hash = {refType.GetHashCode()}");
             testRefValue = (int)parameters[3];
             // Only reference type variable can be over written.
 
