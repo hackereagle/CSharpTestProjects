@@ -29,8 +29,11 @@ namespace TestReflection
             TestClass testClass = new TestClass();
             testClass.TestProperty = 100;
             var targetProp = testClass.GetType().GetProperties().Where(x => x.Name == "TestProperty");
+            Console.WriteLine($"After call getter: {targetProp.First().Name} = {targetProp.First().GetValue(testClass)}");
+
+            targetProp.First().SetValue(testClass, 200);
+            Console.WriteLine($"After call setter: testClass.TestProperty = {testClass.TestProperty}");
             
-            Console.WriteLine($"{targetProp.First().Name} = {targetProp.First().GetValue(testClass)}");
         }
     }
 }
