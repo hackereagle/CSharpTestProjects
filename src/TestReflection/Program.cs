@@ -7,8 +7,11 @@ internal class Program
     {
         Console.WriteLine("All System.Reflection testing are here");
 
-        TestClassBase testMethodInvokeArgOut = new TestMethodInvokeArgOut();
-        testMethodInvokeArgOut.RunTest();
+        //TestClassBase testMethodInvokeArgOut = new TestMethodInvokeArgOut();
+        //testMethodInvokeArgOut.RunTest();
+
+        TestClassBase testInvokeGetter = new TestInvokeGetter();
+        testInvokeGetter.RunTest();
 
         Console.ReadLine();
     }
