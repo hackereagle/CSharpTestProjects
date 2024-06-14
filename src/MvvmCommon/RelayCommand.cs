@@ -12,11 +12,11 @@ namespace MvvmCommon
         /// <summary>
         /// Encapsulated the execute action
         /// </summary>
-        Action<T> execute;
+        Action<T>? execute;
         /// <summary>
         /// Encapsulated the representation for the validation of the excute method
         /// </summary>
-        Predicate<T> canExecute;
+        Predicate<T>? canExecute;
 
         #endregion Fields
 
@@ -43,20 +43,21 @@ namespace MvvmCommon
         #endregion Constructors
 
         #region ICommand Members
-        public event EventHandler CanExecuteChanged
-        {
-            add
-            {
-                System.Windows.Input.CommandManager.RequerySuggested += value;
-                this.CanExecuteChangedInternal += value;
-            }
+        public event EventHandler? CanExecuteChanged;
+        //public event EventHandler CanExecuteChanged
+        //{
+        //    add
+        //    {
+        //        System.Windows.Input.CommandManager.RequerySuggested += value;
+        //        this.CanExecuteChangedInternal += value;
+        //    }
 
-            remove
-            {
-                System.Windows.Input.CommandManager.RequerySuggested -= value;
-                this.CanExecuteChangedInternal -= value;
-            }
-        }
+        //    remove
+        //    {
+        //        System.Windows.Input.CommandManager.RequerySuggested -= value;
+        //        this.CanExecuteChangedInternal -= value;
+        //    }
+        //}
 
         /// <summary>
         /// An event to allow the CanExecuteChanged event to be raised manually

@@ -19,7 +19,7 @@ namespace MvvmCommon
 
     public class AsyncCommand<T> : IAsyncCommand<T>
     {
-        public event EventHandler CanExecuteChanged;
+        public event EventHandler? CanExecuteChanged;
 
         private bool isExecuting;
         private readonly Func<T, Task> execute;
