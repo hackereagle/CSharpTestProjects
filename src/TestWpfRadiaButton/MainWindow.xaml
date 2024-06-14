@@ -12,8 +12,9 @@
     <Window.Resources>
         <local:TestWpfRadiaBtnViewModel x:Key="viewModel" />
     </Window.Resources>
-    <Grid>
+    <Grid DataContext="{Binding Source={StaticResource viewModel}}">
         <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
@@ -21,9 +22,28 @@
 
         <GroupBox Grid.Row="1" Header="Radio Buttons">
             <StackPanel VerticalAlignment="Center">
-                <RadioButton Margin="0,5,0,5" Content="Choice1" />
-                <RadioButton Margin="0,5,0,5" Content="Choice2" />
+                <RadioButton
+                    Margin="0,5,0,5"
+                    Content="Choice1"
+                    IsChecked="{Binding IsChoice1Checked, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+                <RadioButton
+                    Margin="0,5,0,5"
+                    Content="Choice2"
+                    IsChecked="{Binding IsChice2Checked, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+                <RadioButton
+                    Margin="0,5,0,5"
+                    Content="Choice3"
+                    IsChecked="{Binding IsChice3Checked, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
             </StackPanel>
         </GroupBox>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <TextBlock VerticalAlignment="Center" Text="Result: " />
+            <TextBlock
+                Width="200"
+                VerticalAlignment="Center"
+                Text="{Binding Result}"
+                TextWrapping="Wrap" />
+        </StackPanel>
     </Grid>
 </Window>
