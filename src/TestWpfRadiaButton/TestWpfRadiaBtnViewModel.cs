@@ -9,16 +9,22 @@ namespace TestWpfRadiaButton
 {
     internal class TestWpfRadiaBtnViewModel : ViewModelBase
     {
+        public TestWpfRadiaBtnViewModel()
+        { 
+            Result = $"Choice1 = {_isChoice1Checked}, Choice2 = {_isChoice2Checked}, Choice3 = {_isChoice3Checked}";
+        }
 
         private bool _isChoice1Checked = true;
         public bool IsChoice1Checked
         {
             get => _isChoice1Checked;
             set
-            { 
-                SetProperty(ref _isChoice1Checked, value);
-                _result = $"Choice1 = {_isChoice1Checked}, Choice2 = {_isChoice2Checked}, Choice3 = {_isChoice3Checked}";
-                OnPropertyChanged(nameof(Result));
+            {
+                if (_isChoice1Checked != value)
+                { 
+                    SetProperty(ref _isChoice1Checked, value);
+                    Result = $"Choice1 = {_isChoice1Checked}, Choice2 = {_isChoice2Checked}, Choice3 = {_isChoice3Checked}";
+                }
             }
         }
 
@@ -28,9 +34,11 @@ namespace TestWpfRadiaButton
             get => _isChoice2Checked;
             set
             {
-                SetProperty(ref _isChoice2Checked, value);
-                _result = $"Choice1 = {_isChoice1Checked}, Choice2 = {_isChoice2Checked}, Choice3 = {_isChoice3Checked}";
-                OnPropertyChanged(nameof(Result));
+                if (_isChoice2Checked != value)
+                { 
+                    SetProperty(ref _isChoice2Checked, value);
+                    Result = $"Choice1 = {_isChoice1Checked}, Choice2 = {_isChoice2Checked}, Choice3 = {_isChoice3Checked}";
+                }
             }
         }
 
@@ -40,13 +48,19 @@ namespace TestWpfRadiaButton
             get => _isChoice3Checked;
             set
             {
-                SetProperty(ref _isChoice3Checked, value);
-                _result = $"Choice1 = {_isChoice1Checked}, Choice2 = {_isChoice2Checked}, Choice3 = {_isChoice3Checked}";
-                OnPropertyChanged(nameof(Result));
+                if (_isChoice3Checked != value)
+                { 
+                    SetProperty(ref _isChoice3Checked, value);
+                    Result = $"Choice1 = {_isChoice1Checked}, Choice2 = {_isChoice2Checked}, Choice3 = {_isChoice3Checked}";
+                }
             }
         }
 
         private string _result = string.Empty;
-        public string Result => _result;
+        public string Result
+        { 
+            get => _result;
+            private set => SetProperty(ref _result, value);
+        }
     }
 }
