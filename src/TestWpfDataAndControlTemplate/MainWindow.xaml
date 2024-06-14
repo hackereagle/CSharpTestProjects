@@ -1,0 +1,46 @@
+﻿<Window x:Class="TestWpfDataAndControlTemplate.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TestWpfDataAndControlTemplate"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="233" Width="436">
+    <Window.Resources>
+        <ControlTemplate x:Key="simpleTemplate" TargetType="ContentControl">
+            <ContentPresenter 
+                    Content="{TemplateBinding Content}"
+                    ContentTemplate="{TemplateBinding ContentTemplate}">
+            </ContentPresenter>
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="myCheckBoxTemplate" TargetType="CheckBox">
+            <Border Margin="4" Padding="4" BorderThickness="1" BorderBrush="Red" >
+                <CheckBox>
+                    <ContentPresenter 
+                    Content="{TemplateBinding Content}"
+                    ContentTemplate="{TemplateBinding ContentTemplate}">
+                    </ContentPresenter>
+                </CheckBox>
+            </Border>
+        </ControlTemplate>
+
+        <DataTemplate x:Key="myDataTemplate">
+            <StackPanel Orientation="Horizontal">
+                <Button Content="OK" Margin="4" />
+                <Button Content="Cancel" Margin="4"  />
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
+
+    <Grid>
+        <StackPanel>
+            <CheckBox Content="CheckBox 1" Template="{StaticResource simpleTemplate}" Width="449" />
+            <CheckBox Content="CheckBox 2" Template="{StaticResource myCheckBoxTemplate}" />
+            <CheckBox Content="CheckBox 3" ContentTemplate="{StaticResource myDataTemplate}" />
+            <CheckBox Content="Check Box 4" 
+                  Template="{StaticResource myCheckBoxTemplate}" 
+                  ContentTemplate="{StaticResource myDataTemplate}"/>
+        </StackPanel>
+    </Grid>
+</Window>
