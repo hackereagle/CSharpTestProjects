@@ -23,17 +23,23 @@
         <GroupBox Grid.Row="1" Header="Radio Buttons">
             <StackPanel VerticalAlignment="Center">
                 <RadioButton
+                    Name="RadBtn1"
                     Margin="0,5,0,5"
                     Content="Choice1"
+                    GroupName="1"
                     IsChecked="{Binding IsChoice1Checked, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
                 <RadioButton
+                    Name="RadBtn2"
                     Margin="0,5,0,5"
                     Content="Choice2"
-                    IsChecked="{Binding IsChice2Checked, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+                    GroupName="1"
+                    IsChecked="{Binding IsChoice2Checked, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
                 <RadioButton
+                    Name="RadBtn3"
                     Margin="0,5,0,5"
                     Content="Choice3"
-                    IsChecked="{Binding IsChice3Checked, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+                    GroupName="1"
+                    IsChecked="{Binding IsChoice3Checked, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
             </StackPanel>
         </GroupBox>
 

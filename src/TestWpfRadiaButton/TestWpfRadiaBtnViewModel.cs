@@ -10,8 +10,16 @@ namespace TestWpfRadiaButton
     internal class TestWpfRadiaBtnViewModel : ViewModelBase
     {
         public TestWpfRadiaBtnViewModel()
-        { 
+        {
+            //OtherString = $"GroupName = ";
             Result = $"Choice1 = {_isChoice1Checked}, Choice2 = {_isChoice2Checked}, Choice3 = {_isChoice3Checked}";
+        }
+
+        private string _otherString = string.Empty;
+        public string OtherString
+        {
+            get => _otherString;
+            set => SetProperty(ref _otherString, value);
         }
 
         private bool _isChoice1Checked = true;
