@@ -1,0 +1,80 @@
+﻿<Window
+    x:Class="TestImageStrech.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:TestImageStrech"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:media="clr-namespace:System.Windows.Media;assembly=PresentationCore"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    x:Name="window"
+    Title="Test Image Strech"
+    Width="400"
+    Height="450"
+    mc:Ignorable="d">
+    <Window.Resources>
+        <ObjectDataProvider
+            x:Key="imgStrechEnum"
+            MethodName="GetValues"
+            ObjectType="{x:Type sys:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="media:Stretch" />
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="100" />
+        </Grid.RowDefinitions>
+
+        <ScrollViewer
+            x:Name="sv"
+            Grid.Row="0"
+            BorderBrush="Black"
+            BorderThickness="4"
+            HorizontalScrollBarVisibility="Disabled"
+            VerticalScrollBarVisibility="Disabled">
+            <Image
+                x:Name="img"
+                Width="{Binding Path=ActualWidth, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UIElement}}"
+                Height="{Binding Path=ActualHeight, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UIElement}}"
+                Source="{Binding ElementName=window, Path=DisplayedImage}"
+                Stretch="{Binding Path=SelectedValue, ElementName=cmbImgStretch}" />
+        </ScrollViewer>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="2*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Button
+                Grid.Row="0"
+                Grid.RowSpan="2"
+                Grid.Column="0"
+                Margin="5"
+                Command="{Binding ElementName=window, Path=LoadImageCommand}">
+                <TextBlock Text="Load Image" TextWrapping="Wrap" />
+            </Button>
+            <TextBlock
+                Grid.Row="0"
+                Grid.Column="4"
+                Text="Stretch:" />
+            <ComboBox
+                x:Name="cmbImgStretch"
+                Grid.Row="1"
+                Grid.RowSpan="1"
+                Grid.Column="4"
+                VerticalAlignment="Center"
+                ItemsSource="{Binding Source={StaticResource imgStrechEnum}}"
+                SelectedValue="{Binding Path=Stretch, ElementName=img}" />
+        </Grid>
+    </Grid>
+</Window>

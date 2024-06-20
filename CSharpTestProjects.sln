@@ -131,6 +131,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestWpfDataAndControlTempla
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestWpfRadiaButton", "src\TestWpfRadiaButton\TestWpfRadiaButton.csproj", "{EF7DC1E4-B69F-4B55-A038-C06ED8D2D1E4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestImageStrech", "src\TestImageStrech\TestImageStrech.csproj", "{58596066-AB6B-4416-BFA9-6C71C2F9260F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -835,6 +837,18 @@ Global
 		{EF7DC1E4-B69F-4B55-A038-C06ED8D2D1E4}.Release|x64.Build.0 = Release|Any CPU
 		{EF7DC1E4-B69F-4B55-A038-C06ED8D2D1E4}.Release|x86.ActiveCfg = Release|Any CPU
 		{EF7DC1E4-B69F-4B55-A038-C06ED8D2D1E4}.Release|x86.Build.0 = Release|Any CPU
+		{58596066-AB6B-4416-BFA9-6C71C2F9260F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58596066-AB6B-4416-BFA9-6C71C2F9260F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58596066-AB6B-4416-BFA9-6C71C2F9260F}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{58596066-AB6B-4416-BFA9-6C71C2F9260F}.Debug|x64.Build.0 = Debug|Any CPU
+		{58596066-AB6B-4416-BFA9-6C71C2F9260F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{58596066-AB6B-4416-BFA9-6C71C2F9260F}.Debug|x86.Build.0 = Debug|Any CPU
+		{58596066-AB6B-4416-BFA9-6C71C2F9260F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58596066-AB6B-4416-BFA9-6C71C2F9260F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58596066-AB6B-4416-BFA9-6C71C2F9260F}.Release|x64.ActiveCfg = Release|Any CPU
+		{58596066-AB6B-4416-BFA9-6C71C2F9260F}.Release|x64.Build.0 = Release|Any CPU
+		{58596066-AB6B-4416-BFA9-6C71C2F9260F}.Release|x86.ActiveCfg = Release|Any CPU
+		{58596066-AB6B-4416-BFA9-6C71C2F9260F}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -873,6 +887,7 @@ Global
 		{46624131-E224-43AD-9C42-379D07FF1256} = {98FCD5FA-E98C-48F3-B53A-DF35017FD9F8}
 		{54B414A4-8A24-4781-84E7-A726E8EA0FA8} = {98FCD5FA-E98C-48F3-B53A-DF35017FD9F8}
 		{EF7DC1E4-B69F-4B55-A038-C06ED8D2D1E4} = {98FCD5FA-E98C-48F3-B53A-DF35017FD9F8}
+		{58596066-AB6B-4416-BFA9-6C71C2F9260F} = {98FCD5FA-E98C-48F3-B53A-DF35017FD9F8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C7E6A0CC-E197-4DF5-BD06-080DFD82DB81}

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MvvmCommon
 {
-    class RelayCommand<T> : System.Windows.Input.ICommand
+    public class RelayCommand<T> : System.Windows.Input.ICommand
     {
         #region Fields
         /// <summary>
