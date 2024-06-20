@@ -10,7 +10,7 @@
     x:Name="window"
     Title="Test Image Strech"
     Width="400"
-    Height="450"
+    Height="500"
     mc:Ignorable="d">
     <Window.Resources>
         <ObjectDataProvider
@@ -22,10 +22,13 @@
             </ObjectDataProvider.MethodParameters>
         </ObjectDataProvider>
 
+        <BooleanToVisibilityConverter x:Key="boolVisbilityCnvrter" />
+
         <Style x:Key="statusBarTitleStyle" TargetType="TextBlock">
             <Setter Property="VerticalAlignment" Value="Center" />
             <Setter Property="FontWeight" Value="Bold" />
         </Style>
+
         <Style x:Key="statusBarValueStyle" TargetType="TextBlock">
             <Setter Property="VerticalAlignment" Value="Center" />
         </Style>
@@ -33,7 +36,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
-            <RowDefinition Height="100" />
+            <RowDefinition Height="150" />
         </Grid.RowDefinitions>
 
         <ScrollViewer
@@ -54,7 +57,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
                 <RowDefinition Height="2*" />
-                <RowDefinition Height="30" />
+                <RowDefinition Height="50" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
@@ -69,9 +72,24 @@
                 Grid.RowSpan="2"
                 Grid.Column="0"
                 Margin="5"
+                VerticalAlignment="Center"
                 Command="{Binding ElementName=window, Path=LoadImageCommand}">
                 <TextBlock Text="Load Image" TextWrapping="Wrap" />
             </Button>
+            <GroupBox
+                Grid.Row="0"
+                Grid.RowSpan="2"
+                Grid.Column="1"
+                Grid.ColumnSpan="3"
+                Header="Test Other Setting">
+                <ScrollViewer>
+                    <StackPanel Orientation="Vertical">
+                        <CheckBox x:Name="showScroller">
+                            <TextBlock Text="Show Image scroll bar" TextWrapping="Wrap" />
+                        </CheckBox>
+                    </StackPanel>
+                </ScrollViewer>
+            </GroupBox>
             <TextBlock
                 Grid.Row="0"
                 Grid.Column="4"
@@ -81,19 +99,34 @@
                 Grid.Row="1"
                 Grid.RowSpan="1"
                 Grid.Column="4"
-                VerticalAlignment="Center"
+                VerticalAlignment="Top"
                 ItemsSource="{Binding Source={StaticResource imgStrechEnum}}"
                 SelectedValue="{Binding Path=Stretch, ElementName=img}" />
-            <StackPanel
+            <ScrollViewer
                 Grid.Row="2"
                 Grid.Column="0"
                 Grid.ColumnSpan="5"
-                Orientation="Horizontal">
-                <TextBlock Style="{StaticResource statusBarTitleStyle}" Text="Image Width: " />
-                <TextBlock Style="{StaticResource statusBarValueStyle}" Text="{Binding ElementName=img, Path=Width}" />
-                <TextBlock Style="{StaticResource statusBarTitleStyle}" Text=", Height: " />
-                <TextBlock Style="{StaticResource statusBarValueStyle}" Text="{Binding ElementName=img, Path=Height}" />
-            </StackPanel>
+                HorizontalScrollBarVisibility="Visible">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Style="{StaticResource statusBarTitleStyle}" Text="Image information: Width=" />
+                    <TextBlock Style="{StaticResource statusBarValueStyle}" Text="{Binding ElementName=img, Path=Width}" />
+                    <TextBlock Style="{StaticResource statusBarTitleStyle}" Text=", Height=" />
+                    <TextBlock Style="{StaticResource statusBarValueStyle}" Text="{Binding ElementName=img, Path=Height}" />
+                    <TextBlock Style="{StaticResource statusBarTitleStyle}" Text="; ActualWidth=" />
+                    <TextBlock Style="{StaticResource statusBarValueStyle}" Text="{Binding ElementName=img, Path=ActualWidth}" />
+                    <TextBlock Style="{StaticResource statusBarTitleStyle}" Text=", ActualHeight=" />
+                    <TextBlock Style="{StaticResource statusBarValueStyle}" Text="{Binding ElementName=img, Path=ActualHeight}" />
+
+                    <TextBlock Style="{StaticResource statusBarTitleStyle}" Text="; Scroll viewer information: Width=" />
+                    <TextBlock Style="{StaticResource statusBarValueStyle}" Text="{Binding ElementName=sv, Path=Width}" />
+                    <TextBlock Style="{StaticResource statusBarTitleStyle}" Text=", Height=" />
+                    <TextBlock Style="{StaticResource statusBarValueStyle}" Text="{Binding ElementName=sv, Path=Height}" />
+                    <TextBlock Style="{StaticResource statusBarTitleStyle}" Text="; ActualWidth=" />
+                    <TextBlock Style="{StaticResource statusBarValueStyle}" Text="{Binding ElementName=sv, Path=ActualWidth}" />
+                    <TextBlock Style="{StaticResource statusBarTitleStyle}" Text=", ActualHeight=" />
+                    <TextBlock Style="{StaticResource statusBarValueStyle}" Text="{Binding ElementName=sv, Path=ActualHeight}" />
+                </StackPanel>
+            </ScrollViewer>
         </Grid>
     </Grid>
 </Window>
