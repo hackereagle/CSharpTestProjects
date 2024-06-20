@@ -21,6 +21,14 @@
                 <x:Type TypeName="media:Stretch" />
             </ObjectDataProvider.MethodParameters>
         </ObjectDataProvider>
+
+        <Style x:Key="statusBarTitleStyle" TargetType="TextBlock">
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="FontWeight" Value="Bold" />
+        </Style>
+        <Style x:Key="statusBarValueStyle" TargetType="TextBlock">
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -46,6 +54,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
                 <RowDefinition Height="2*" />
+                <RowDefinition Height="30" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
@@ -75,6 +84,16 @@
                 VerticalAlignment="Center"
                 ItemsSource="{Binding Source={StaticResource imgStrechEnum}}"
                 SelectedValue="{Binding Path=Stretch, ElementName=img}" />
+            <StackPanel
+                Grid.Row="2"
+                Grid.Column="0"
+                Grid.ColumnSpan="5"
+                Orientation="Horizontal">
+                <TextBlock Style="{StaticResource statusBarTitleStyle}" Text="Image Width: " />
+                <TextBlock Style="{StaticResource statusBarValueStyle}" Text="{Binding ElementName=img, Path=Width}" />
+                <TextBlock Style="{StaticResource statusBarTitleStyle}" Text=", Height: " />
+                <TextBlock Style="{StaticResource statusBarValueStyle}" Text="{Binding ElementName=img, Path=Height}" />
+            </StackPanel>
         </Grid>
     </Grid>
 </Window>
