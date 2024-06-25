@@ -17,8 +17,10 @@ internal class Program
 
         if (IsRunAsAdmin())
         {
+            // System.Diagnostics.EventLog need to run as Administrator
             TestEventLogClass test = new TestEventLogClass();
             test.TestWriteToApplicationWithInformation();
+
         }
         else
         {
