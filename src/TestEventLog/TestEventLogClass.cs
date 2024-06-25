@@ -10,6 +10,11 @@ namespace TestEventLog
 {
     internal class TestEventLogClass
     {
+        public TestEventLogClass()
+        {
+            Console.WriteLine("\n===== Test System.Diagnostics.EventLog! It need to run as Administrator! =====");
+        }
+
         public void TestWriteToApplicationWithInformation()
         { 
             EventLog eventLog = new EventLog("Application");
