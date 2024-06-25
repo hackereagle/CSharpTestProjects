@@ -63,6 +63,7 @@ internal class Program
             case EventLogSample.MicrosoftExtension:
                 TestMicrosoftExtensionEventLog testMicrosoftExtension = new TestMicrosoftExtensionEventLog();
                 testMicrosoftExtension.TestWriteToApplicationWithInformation();
+                testMicrosoftExtension.TestWriteToCustomLogWithInformation();
                 break;
             default:
                 Console.WriteLine("Unknown choose!");

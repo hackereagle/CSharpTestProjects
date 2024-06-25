@@ -29,7 +29,26 @@ namespace TestEventLog
 
             var logger = loggerFactory.CreateLogger<TestMicrosoftExtensionEventLog>();
             logger.LogInformation("test with Microsoft.Extensions.Logging.EventLog");
-            Console.WriteLine("Run success! Please check windows Event Log.");
+            Console.WriteLine($"Run {nameof(TestWriteToApplicationWithInformation)} success! Please check windows Event Log.");
+        }
+
+        public void TestWriteToCustomLogWithInformation()
+        {
+            using var loggerFactory = LoggerFactory.Create(builder =>
+            {
+                builder.AddEventLog(new EventLogSettings()
+                {
+                    // SourceName must be unique.
+                    // I already registered Assembly.GetExecutingAssembly().GetName().Name in TestWriteToApplicationWithInformation
+                    // So add 2 to the end of the name.
+                    SourceName = Assembly.GetExecutingAssembly().GetName().Name + 2,
+                    LogName = "scLinCustomLog",
+                });
+            });
+
+            var logger = loggerFactory.CreateLogger<TestMicrosoftExtensionEventLog>();
+            logger.LogInformation("test using Microsoft.Extensions.Logging.EventLog create custom log and write log!");
+            Console.WriteLine($"Run {nameof(TestWriteToCustomLogWithInformation)} success! Please check windows Event Log.");
         }
     }
 }
